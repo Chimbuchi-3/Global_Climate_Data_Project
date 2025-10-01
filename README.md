@@ -13,7 +13,7 @@ CO₂ Emissions Data: Provides comprehensive data on CO₂ emissions from variou
 Source: [`https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.csv`](https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.csv)
 Temperature Change Data: Contains data on temperature anomalies relative to a baseline period. (Note: Due to issues with accessing the real temperature data URL during development, dummy data was used for demonstration in the notebook. The Streamlit app uses a similar dummy dataset for integration purposes).
 
-AnNALYSIS PERFORMED
+ANALYSIS PERFORMED
 
 The analysis covers the following key areas:
 
@@ -27,8 +27,16 @@ The analysis covers the following key areas:
 8. Policy Insights and Strategies: Discussing potential policy recommendations and highlighting successful mitigation/adaptation strategies based on the insights gained from the data analysis.
 
 SUMMARY OF FINDINGS
+Data Analysis Key Findings:
+Realistic e-commerce data for customers, products, orders, and order items was successfully simulated using the faker library and stored in pandas DataFrames.
+A Star Schema data warehouse design was defined, consisting of DimCustomer, DimProduct, DimTime dimension tables and a FactSales fact table, complete with primary and foreign keys.
+A SQLite database named ecommerce_dwh.db and the defined tables were successfully created using SQLAlchemy.
+An ETL pipeline was developed and simulated in Python, transforming the raw data into the data warehouse schema and loading it into the SQLite database using pandas' to_sql method.
+SQL queries for advanced analytics, including Cohort Analysis, Product Attribution (co-purchase), RFM Analysis, and Customer Lifetime Value (CLV), were written and executed against the SQLite database, storing results in pandas DataFrames.
+A Streamlit dashboard application (app.py) was developed to visualize the data warehouse insights, including KPIs like Total Sales over Time, Sales by Category, Sales by Country, Cohort Analysis, RFM Analysis, and Top Products by Sales.
+Interactivity features such as date range filtering, product category and country selection, and a slider for the number of top products were added to the Streamlit dashboard.
+A comprehensive README.md file was created, documenting the project overview, data warehouse schema (including a conceptual ERD), ETL process, advanced SQL analytics queries, Streamlit dashboard setup and features, and potential future enhancements.
 
-(This section would contain a summary of the key findings from the analysis, addressing the initial questions posed in the notebook. You can populate this section based on the insights gained from running the code and interpreting the visualizations and statistical outputs.)
 
 HOW TO RUN THE NOTEBOOK
 
